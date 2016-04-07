@@ -1,0 +1,21 @@
+-# in app/views/owners/show.html.haml
+%h2 Details about #{@owner.firstname}
+%ul#details
+  %li
+    First Name:
+    = @owner.firstname
+  %li
+    Last Name:
+    = @owner.lastname
+  %li
+    Email ID:
+    = @owner.emailid
+  %li
+    Phone No:
+    = @owner.phoneno
+= link_to 'Edit info', edit_owner_path(@owner)
+= link_to 'Back to the owners list', owners_path
+= link_to 'Add House', new_owner_house_path(@owner)
+
+
+

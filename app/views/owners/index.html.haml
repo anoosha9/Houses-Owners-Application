@@ -1,0 +1,26 @@
+%h2.grid_12 All Owners
+%div.grid_12
+  %div.box
+    %div.header
+      
+    %div.content
+      %table.dynamic.styled
+        %thead
+          %tr
+            %th First Name
+            %th Last Name
+            %th Email-ID
+            %th Phone No
+            %th More Info
+            %th Houses
+          %tbody
+            -@owners.each do |owner|
+              %tr
+                %td= owner.firstname
+                %td= owner.lastname
+                %td= owner.emailid
+                %td= owner.phoneno
+                %td= link_to "More about #{owner.firstname}", owner_path(owner) 
+                %td= link_to "View houses", owner_houses_path(owner)
+%br
+= link_to 'Add a new owner', new_owner_path

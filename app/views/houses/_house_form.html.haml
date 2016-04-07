@@ -1,0 +1,41 @@
+- unless @house.errors.empty?
+  #warning
+    Errors prevented this house from being #{controller.action_name}d:
+    %ul
+      - @house.errors.full_messages.each do |error|
+        %li= error
+= label :house, :housetype, 'House Type:'
+= select :house, :housetype, House.all_housetype
+%br
+%br
+= label :house, :price, 'Price:'
+= text_field :house, :price
+%br
+%br
+= label :house, :addeddate, 'Added Date'
+= date_select :house, :addeddate, :start_year => 2013, :end_year => 2014
+%br
+%br
+= label :house, :availability, 'Availability:'
+= select :house, :availability, ['Yes', 'No']
+%br
+%br
+= label :house, :hno, 'H No:'
+= text_field :house, :hno
+%br
+%br
+= label :house, :street, 'Street:'
+= text_field :house, :street
+%br
+%br
+= label :house, :city, 'City:'
+= text_field :house, :city
+%br
+%br
+= label :house, :state, 'State:'
+= text_field :house, :state
+%br
+%br
+= label :house, :zipcode, 'Zipcode:'
+= text_field :house, :zipcode
+%br

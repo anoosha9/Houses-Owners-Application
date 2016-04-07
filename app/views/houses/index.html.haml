@@ -1,0 +1,34 @@
+%h2.grid_12 All Houses
+%div.grid_12
+  %div.box
+    %div.header
+      %p 
+    ="Houses of " + @owner.firstname  
+    %div.content
+      %table#houses.dynamic.styled
+        %thead
+          %tr
+            %th housetype
+            %th price
+            %th addeddate
+            %th availability
+            %th address
+            %th Action
+          %tbody
+            -@houses.each do |house|
+              %tr{:class => ('available' unless house.availability =~ /^Yes$/)}
+                %td= house.housetype
+                %td= house.price
+                %td= house.addeddate
+                %td= house.availability
+                %td 
+                  = house.hno 
+                  = house.street
+                  = house.city 
+                  = house.state 
+                  = house.zipcode
+                %td= link_to "Edit house information", edit_owner_house_path(house.owner, house) 
+%br
+=link_to 'Add new House', new_owner_house_path(@owner)
+= link_to 'Back to the owners list', owners_path
+            

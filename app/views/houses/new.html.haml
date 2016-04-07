@@ -1,0 +1,4 @@
+%h1 New House for #{@owner.firstname}
+= form_tag owner_houses_path(@owner), :method => :post do
+  = render :partial => 'house_form'
+  = submit_tag 'Create House'

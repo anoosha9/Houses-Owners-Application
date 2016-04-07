@@ -1,0 +1,22 @@
+- unless @owner.errors.empty?
+  #warning
+    Errors prevented this owner from being #{controller.action_name}d:
+    %ul
+      - @owner.errors.full_messages.each do |error|
+        %li= error
+= label :owner, :firstname, 'First Name:'
+= text_field :owner, :firstname
+%br
+%br
+= label :owner, :lastname, 'Last Name:'
+= text_field :owner, :lastname
+%br
+%br
+= label :owner, :emailid, 'Email ID:'
+= text_field :owner, :emailid
+%br
+%br
+= label :owner, :phoneno, 'Phone no.:'
+= text_field :owner, :phoneno
+%br
+%br

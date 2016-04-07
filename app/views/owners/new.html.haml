@@ -1,0 +1,8 @@
+%h2 Add Owner
+%div.grid_12
+  %div.box
+    %div.header
+    %div.content
+= form_tag owners_path, :method => :post do
+  = render :partial => 'owner_form'
+  = submit_tag 'Save changes'

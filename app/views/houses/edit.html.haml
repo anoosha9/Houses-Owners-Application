@@ -1,0 +1,5 @@
+%h2 Edit house
+= form_tag owner_house_path(house_id: @house.id), :method => :put do
+  = render :partial => 'house_form'
+  = submit_tag 'Save changes'
+
